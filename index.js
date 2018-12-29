@@ -1,7 +1,7 @@
 const Commando = require('discord.js-commando');
 const Discord = require('discord.js');
 const bot = new Discord.Client();
-const Token = 'process.env.Token';
+const Token = process.env.Token;
 
 bot.login(Token);
 var id = '520481540027711488';
