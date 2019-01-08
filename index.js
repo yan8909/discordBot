@@ -65,6 +65,12 @@ bot.on('message', function(message){
             .catch(console.error);
             break;
 
+        case "gacha" :
+            message.channel.send({files: ['./images/gacha.gif']
+            })
+            .catch(console.error);
+            break;
+
         case "!help" :
             message.channel.send(
                 "```\n" +
@@ -76,7 +82,8 @@ bot.on('message', function(message){
                 "-嗨起來\n"+
                 "-舔\n" +
                 "-阿福\n" +
-                "-大王" +
+                "-大王\n" +
+                "-gacha" +
                 "```"
             );
             
