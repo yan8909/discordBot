@@ -53,16 +53,30 @@ bot.on('message', function(message){
             .catch(console.error);
             break;
 
+        case "阿福" :
+            message.channel.send({files: ['./images/afu.gif']
+            })
+            .catch(console.error);
+            break;
+
+        case "大王" :
+            message.channel.send({files: ['./images/dawang.gif']
+            })
+            .catch(console.error);
+            break;
+
         case "!help" :
             message.channel.send(
                 "```\n" +
                 "指令表\n" +
-                "- 上車\n" +
-                "- 怕\n" +
-                "- 大爆射\n" +
-                "- 惠射\n" +
-                "- 嗨起來\n"+
-                "- 舔" +
+                "-上車\n" +
+                "-怕\n" +
+                "-大爆射\n" +
+                "-惠射\n" +
+                "-嗨起來\n"+
+                "-舔\n" +
+                "-阿福\n" +
+                "-大王" +
                 "```"
             );
             
