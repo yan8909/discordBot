@@ -78,15 +78,15 @@ bot.on('message', function(message){
 
         case "!help" :
             var embed = new Discord.RichEmbed()
-                        .setTitle("指令表")
-                        .addField("上車")
-                        .addField("怕")
-                        .addField("大爆射")
-                        .addField("嗨起來")
-                        .addField("舔")
-                        .addField("阿福")
-                        .addField("大王")
-                        .addField("gacha")
+                        .setTitle("指令表", null)
+                        .addField("上車", null)
+                        .addField("怕", null)
+                        .addField("大爆射", null)
+                        .addField("嗨起來", null)
+                        .addField("舔", null)
+                        .addField("阿福", null)
+                        .addField("大王", null)
+                        .addField("gacha", null)
             message.channel.send({embed});
             break;
             //     embed:{}
