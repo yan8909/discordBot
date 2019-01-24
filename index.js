@@ -39,15 +39,9 @@ bot.on('message', function(message){
             .catch(console.error);
             break;
 
-        // case "惠射" :
-        //     message.channel.send({files: ['']
-        //     })
-        //     .catch(console.error);
-        //     break;
-
         case "嗨起來" :
             var num = Math.floor( Math.random() * 25 )
-            message.channel.send({files: [`./images/giri/${num}.gif`]
+            message.channel.send("ギリギリeye~  ギリギリmind~",{files: [`./images/giri/${num}.gif`]
             })
             .catch(console.error);
             break;
@@ -76,33 +70,21 @@ bot.on('message', function(message){
             .catch(console.error);
             break;
 
-        case "!help" :
-            var embed = new Discord.RichEmbed()
-                        .setTitle("指令表", null)
-                        .addField("上車", null)
-                        .addField("怕", null)
-                        .addField("大爆射", null)
-                        .addField("嗨起來", null)
-                        .addField("舔", null)
-                        .addField("阿福", null)
-                        .addField("大王", null)
-                        .addField("gacha", null)
-            message.channel.send({embed});
+        case "!help" : 
+            message.channel.send(
+                "```\n" +
+                "指令表\n" +
+                "-上車\n" +
+                "-怕\n" +
+                "-大爆射\n" +
+                "-嗨起來\n"+
+                "-舔\n" +
+                "-阿福\n" +
+                "-大王\n" +
+                "-gacha" +
+                "```"
+            );
             break;
-            //     embed:{}
-            //     "```\n" +
-            //     "指令表\n" +
-            //     "-上車\n" +
-            //     "-怕\n" +
-            //     "-大爆射\n" +
-            //     "-惠射\n" +
-            //     "-嗨起來\n"+
-            //     "-舔\n" +
-            //     "-阿福\n" +
-            //     "-大王\n" +
-            //     "-gacha" +
-            //     "```"
-            // );
             
     }
 
