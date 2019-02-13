@@ -12,6 +12,7 @@
   "dependencies": {
     "discord.js": "^11.4.2",
     "discord.js-commando": "^0.10.0",
+    "google-translate-api": "^2.3.0",
     "nodemon": "^1.18.9"
   }
 }

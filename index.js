@@ -3,12 +3,25 @@ const Discord = require('discord.js');
 const bot = new Discord.Client();
 const Token = process.env.Token;
 
+const translate = require('google-translate-api');
+
 bot.login(Token);
 
 var Yeeid = '520481540027711488';
 var mention = '<@' + Yeeid + '>';
 
 bot.on('message', function(message){
+
+    if(message.startsWith('tr?')){
+        var srcMsg = message.slice(5) 
+        var toLanguage = message.slice(3, 5);
+
+        translate(srcMsg, {to: toLanguage}).then(res => {
+            message.channel.send(res.text)
+        }).catch(err => {
+            console.error(err);
+        });
+    }
 
     switch(message.content)
     {
@@ -85,7 +98,6 @@ bot.on('message', function(message){
                 "```"
             );
             break;
-            
     }
 
 });
