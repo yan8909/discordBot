@@ -3,7 +3,7 @@ const Discord = require('discord.js');
 const bot = new Discord.Client();
 const Token = process.env.Token;
 
-const translate = require('google-translate-api');
+const translate = require('@vitalets/google-translate-api');
 
 bot.login(Token);
 
@@ -12,14 +12,21 @@ var mention = '<@' + Yeeid + '>';
 
 bot.on('message', function(message){
 
-    if(message.startsWith('tr?')){
-        var srcMsg = message.slice(message.indexOf(' ') + 1) 
-        var toLanguage = message.slice(3, message.indexOf(' '));
-
-        translate(srcMsg, {to: toLanguage}).then(res => {
-            message.channel.send(res.text)
-        }).catch(err => {
-            console.error(err);
+    if(message.content.startsWith('tr?')){
+        var msg = message.content;
+        var srcMsg = msg.slice(msg.indexOf(' ') + 1) 
+        var toLanguage = msg.slice(3, msg.indexOf(' '));
+        
+        translate(srcMsg, msg.indexOf(' ')>3 ? {to: toLanguage} : {to: 'zh-tw'}).then(res => {
+            message.channel.send({embed: {
+                author: {
+                    name: message.author.username,
+                    icon_url: message.author.avatarURL
+                },
+                description: res.text
+            }})
+            }).catch(err => {
+                console.error(err);
         });
     }
 
