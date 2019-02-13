@@ -13,8 +13,8 @@ var mention = '<@' + Yeeid + '>';
 bot.on('message', function(message){
 
     if(message.startsWith('tr?')){
-        var srcMsg = message.slice(5) 
-        var toLanguage = message.slice(3, 5);
+        var srcMsg = message.slice(message.indexOf(' ') + 1) 
+        var toLanguage = message.slice(3, message.indexOf(' '));
 
         translate(srcMsg, {to: toLanguage}).then(res => {
             message.channel.send(res.text)
