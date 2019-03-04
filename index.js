@@ -11,6 +11,21 @@ bot.login(Token);
 var Yeeid = '520481540027711488';
 var mention = '<@' + Yeeid + '>';
 
+// bot.on('ready', () => {
+//     fs.readdir('./images/shoot', function(err, files){
+//         if(err) {
+//             return console.error(err);
+//         }
+//         var num = Math.random() * files.length;
+//         var file = files[Math.floor(num)];
+        
+//         console.log( file );
+//         console.log(num);
+//         console.log(Math.floor(num));
+        
+//     });
+//   });
+
 bot.on('message', function(message){
 
     if(message.content.startsWith('tr?')){
@@ -29,7 +44,7 @@ bot.on('message', function(message){
             }).catch(err => {
                 console.error(err);
         });
-    }
+    }    
 
     switch(message.content)
     {
@@ -50,12 +65,17 @@ bot.on('message', function(message){
             break;
         
         case "爆射" :
-            var shoot = fs.readdir('./images/shoot', err => console.error);
-            message.channel.send({files: [ shoot[Math.floor(Math.random() * shoot.length)] ]
-            })
-            .catch(console.error);
+            fs.readdir('./images/shoot', function(err, files){
+                if(err) {
+                    console.error;
+                }
+                var shoot  = files;
+                message.channel.send({files: [ './images/shoot/' + shoot[Math.floor(Math.random() * shoot.length)] ]
+                })
+                .catch(console.error);
+            });
             break;
-            
+
         case "大爆射" :
             var img = [
                 './images/bigshoot.gif',
@@ -104,7 +124,7 @@ bot.on('message', function(message){
                 "指令表\n" +
                 "-上車\n" +
                 "-怕\n" +
-                "-大爆射\n" +
+                "-(大)爆射\n" +
                 "-嗨起來\n"+
                 "-舔\n" +
                 "-阿福\n" +
