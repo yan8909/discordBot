@@ -1,6 +1,7 @@
 const Commando = require('discord.js-commando');
 const Discord = require('discord.js');
 const bot = new Discord.Client();
+const fs = require('fs');
 const Token = process.env.Token;
 
 const translate = require('@vitalets/google-translate-api');
@@ -48,6 +49,13 @@ bot.on('message', function(message){
             .catch(console.error);
             break;
         
+        case "爆射" :
+            var shoot = fs.readdir('./images/shoot', err => console.error);
+            message.channel.send({files: [ shoot[Math.floor(Math.random() * shoot.length)] ]
+            })
+            .catch(console.error);
+            break;
+            
         case "大爆射" :
             var img = [
                 './images/bigshoot.gif',
