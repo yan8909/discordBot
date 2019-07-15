@@ -130,7 +130,7 @@ bot.on('message', function(message){
                 "-舔\n" +
                 "-阿福\n" +
                 "-大王\n" +
-                "-gacha" +
+                "-gacha\n" +
                 "-tr?目標語言 原文\n" +
                 " 語言清單:https://github.com/matheuss/google-translate-api/blob/master/languages.js\n" +
                 "```"
