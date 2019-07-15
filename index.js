@@ -28,6 +28,7 @@ var mention = '<@' + Yeeid + '>';
 
 bot.on('message', function(message){
 
+
     if(message.content.startsWith('tr?')){
         var msg = message.content;
         var srcMsg = msg.slice(msg.indexOf(' ') + 1) 
@@ -130,6 +131,8 @@ bot.on('message', function(message){
                 "-阿福\n" +
                 "-大王\n" +
                 "-gacha" +
+                "-tr?目標語言 原文\n" +
+                " 語言清單:https://github.com/matheuss/google-translate-api/blob/master/languages.js\n" +
                 "```"
             );
             break;
