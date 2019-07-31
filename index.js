@@ -51,6 +51,10 @@ bot.on('message', function(message){
         var userName = msg.slice(msg.indexOf(' ') + 1);
         var user = bot.users.find('username', userName);
 
+        if(userName == '<:yee:524609574540673065>'){
+            user = bot.users.find('username', 'salmon');
+        }
+
         if(user) {
             if(user.presence.status == 'offline'){
                 message.channel.send(userName + '還在睡');
@@ -69,7 +73,12 @@ bot.on('message', function(message){
     switch(message.content)
     {
         case '<:yee:524609574540673065>' :
-            message.channel.send(mention);
+            var user = bot.users.find('username', 'salmon');
+            if(user.presence.status == 'offline'){
+                message.channel.send(mention + ' 還在睡');
+            }else{
+                message.channel.send(mention);
+            }
             break;
 
         case "上車" :
