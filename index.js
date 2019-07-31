@@ -3,7 +3,6 @@ const Discord = require('discord.js');
 const bot = new Discord.Client();
 const fs = require('fs');
 const Token = process.env.Token;
-
 const translate = require('@vitalets/google-translate-api');
 
 bot.login(Token);
@@ -31,7 +30,7 @@ bot.on('message', function(message){
 
     if(message.content.startsWith('tr?')){
         var msg = message.content;
-        var srcMsg = msg.slice(msg.indexOf(' ') + 1) 
+        var srcMsg = msg.slice(msg.indexOf(' ') + 1);
         var toLanguage = msg.slice(3, msg.indexOf(' '));
         
         translate(srcMsg, msg.indexOf(' ')>3 ? {to: toLanguage} : {to: 'zh-tw'}).then(res => {
@@ -45,6 +44,26 @@ bot.on('message', function(message){
             }).catch(err => {
                 console.error(err);
         });
+    }
+
+    if(message.content.startsWith('!status')){
+        var msg = message.content;
+        var userName = msg.slice(msg.indexOf(' ') + 1);
+        var user = bot.users.find('username', userName);
+
+        if(user) {
+            if(user.presence.status == 'offline'){
+                message.channel.send(userName + '還在睡');
+            }
+            else{
+                message.channel.send(user.presence.status);
+            }
+        }
+        else{
+            message.channel.send('誰???')
+        }
+
+
     }    
 
     switch(message.content)
