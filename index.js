@@ -60,7 +60,7 @@ bot.on('message', function(message){
             if(user.presence.status == 'offline'){
                 message.channel.send(userName + '還在睡');
             }else if (user.presence.status == 'idle' || user.presence.status == 'dnd') {
-                message.channel.send(mention + ' 在忙' + '<:Uknow:554584844542410752');
+                message.channel.send(mention + ' 在忙' + '<:Uknow:554584844542410752>');
             }
             else{
                 message.channel.send(user.presence.status);
@@ -80,7 +80,7 @@ bot.on('message', function(message){
             if(user.presence.status == 'offline'){
                 message.channel.send(mention + ' 還在睡');
             }else if (user.presence.status == 'idle' || user.presence.status == 'dnd') {
-                message.channel.send(mention + ' 在忙' + '<:Uknow:554584844542410752');
+                message.channel.send(mention + ' 在忙' + '<:Uknow:554584844542410752>');
             }
             else{
                 message.channel.send(mention);
