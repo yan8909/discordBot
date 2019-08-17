@@ -27,7 +27,7 @@ var mention = '<@' + Yeeid + '>';
 
 bot.on('message', function(message){
 
-
+    //翻譯
     if(message.content.startsWith('tr?')){
         var msg = message.content;
         var srcMsg = msg.slice(msg.indexOf(' ') + 1);
@@ -46,6 +46,7 @@ bot.on('message', function(message){
         });
     }
 
+    //狀態
     if(message.content.startsWith('!status')){
         var msg = message.content;
         var userName = msg.slice(msg.indexOf(' ') + 1);
@@ -58,6 +59,8 @@ bot.on('message', function(message){
         if(user) {
             if(user.presence.status == 'offline'){
                 message.channel.send(userName + '還在睡');
+            }else if (user.presence.status == 'idle' || user.presence.status == 'dnd') {
+                message.channel.send(mention + ' 在忙' + '<:Uknow:554584844542410752');
             }
             else{
                 message.channel.send(user.presence.status);
@@ -76,7 +79,10 @@ bot.on('message', function(message){
             var user = bot.users.find('username', 'salmon');
             if(user.presence.status == 'offline'){
                 message.channel.send(mention + ' 還在睡');
-            }else{
+            }else if (user.presence.status == 'idle' || user.presence.status == 'dnd') {
+                message.channel.send(mention + ' 在忙' + '<:Uknow:554584844542410752');
+            }
+            else{
                 message.channel.send(mention);
             }
             break;
