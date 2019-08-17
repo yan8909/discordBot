@@ -9,6 +9,7 @@ bot.login(Token);
 
 var Yeeid = '520481540027711488';
 var mention = '<@' + Yeeid + '>';
+var yeeArray = ['yee', 'Yee', 'ㄏㄏ', '廠廠']
 
 // bot.on('ready', () => {
 //     fs.readdir('./images/shoot', function(err, files){
@@ -52,7 +53,7 @@ bot.on('message', function(message){
         var userName = msg.slice(msg.indexOf(' ') + 1);
         var user = bot.users.find('username', userName);
 
-        if(userName == '<:yee:524609574540673065>'){
+        if(userName == '<:yee:524609574540673065>' || yeeArray.includes('userName') ){
             user = bot.users.find('username', 'salmon');
         }
 
