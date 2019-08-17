@@ -53,7 +53,7 @@ bot.on('message', function(message){
         var userName = msg.slice(msg.indexOf(' ') + 1);
         var user = bot.users.find('username', userName);
 
-        if(userName == '<:yee:524609574540673065>' || yeeArray.includes('userName') ){
+        if(userName == '<:yee:524609574540673065>' || yeeArray.includes(userName) ){
             user = bot.users.find('username', 'salmon');
         }
 
