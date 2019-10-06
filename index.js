@@ -84,7 +84,7 @@ bot.on('message', function(message){
                 message.channel.send(mention + ' 在忙' + '<:Uknow:554584844542410752>');
             }
             else{
-                message.channel.send(mention + ' ( ºωº ) 醒了啦');
+                message.channel.send(mention + ' ─=≡Σ((( つ•̀ω•́)つ');
             }
             break;
 
