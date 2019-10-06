@@ -59,7 +59,7 @@ bot.on('message', function(message){
 
         if(user) {
             if(user.presence.status == 'offline'){
-                message.channel.send(userName + '還在睡');
+                message.channel.send(userName + '(¦3[▓▓]  ');
             }else if (user.presence.status == 'idle' || user.presence.status == 'dnd') {
                 message.channel.send(userName + ' 在忙' + '<:Uknow:554584844542410752>');
             }
@@ -79,12 +79,12 @@ bot.on('message', function(message){
         case '<:yee:524609574540673065>' :
             var user = bot.users.find('username', 'salmon');
             if(user.presence.status == 'offline'){
-                message.channel.send(mention + ' 還在睡');
+                message.channel.send(mention + ' (¦3[▓▓]  有事請留言');
             }else if (user.presence.status == 'idle' || user.presence.status == 'dnd') {
                 message.channel.send(mention + ' 在忙' + '<:Uknow:554584844542410752>');
             }
             else{
-                message.channel.send(mention + '(ಠ益ಠ) 醒了啦 幹');
+                message.channel.send(mention + ' ( ºωº ) 醒了啦');
             }
             break;
 
