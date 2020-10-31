@@ -77,7 +77,7 @@ bot.on('message', function(message){
     switch(message.content)
     {
         case '<:yee:524609574540673065>' :
-            var user = bot.users.find('username', 'salmon');
+            var user = bot.users.fetch(Yeeid);
             if(user.presence.status == 'offline'){
                 message.channel.send(mention + ' (¦3[▓▓]  有事請留言');
             }else if (user.presence.status == 'idle' || user.presence.status == 'dnd') {
