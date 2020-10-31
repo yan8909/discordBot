@@ -1,10 +1,8 @@
-const Commando = require('discord.js-commando');
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 const fs = require('fs');
 const Token = process.env.Token;
 const translate = require('@vitalets/google-translate-api');
-
 bot.login(Token);
 
 var Yeeid = '520481540027711488';
@@ -77,7 +75,8 @@ bot.on('message', function(message){
     switch(message.content)
     {
         case '<:yee:524609574540673065>' :
-            var user = bot.users.fetch(Yeeid);
+            var user = bot.users.cache.find(user => user.id == Yeeid);
+            console.log(user.presence.status);
             if(user.presence.status == 'offline'){
                 message.channel.send(mention + ' (¦3[▓▓]  有事請留言');
             }else if (user.presence.status == 'idle' || user.presence.status == 'dnd') {
