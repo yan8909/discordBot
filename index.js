@@ -13,23 +13,18 @@ const fs = require('fs');
 
 // helth check
 const express = require("express");
-const router = express.Router({});
-router.get('/', async (_req, res, _next) => {
+const app = express()
+const port = 80
 
-    const healthcheck = {
-        uptime: process.uptime(),
-        message: 'OK',
-        timestamp: Date.now()
-    };
-    try {
-        res.send(healthcheck);
-    } catch (error) {
-        healthcheck.message = error;
-        res.status(503).send();
-    }
-});
-// export router with all routes included
-module.exports = router;
+app.get('/', (req, res) => {
+  res.json({
+    message: 'Hello, world!',
+  })
+})
+
+app.listen(port, () => {
+  console.log(`App is listening on port ${port}`)
+})
 
 config();
 // const Token = process.env.Token;
