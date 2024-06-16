@@ -1,0 +1,17 @@
+# fly.toml app configuration file generated for no-time-to-explain-bot-sparkling-frost-4517 on 2024-04-02T20:59:05+08:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'no-time-to-explain-bot-sparkling-frost-4517'
+primary_region = 'nrt'
+
+
+[env]
+  PORT = '8080'
+
+
+[[vm]]
+  memory = '512mb'
+  cpu_kind = 'shared'
+  cpus = 1
